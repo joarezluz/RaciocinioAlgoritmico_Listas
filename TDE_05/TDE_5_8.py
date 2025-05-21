@@ -3,9 +3,11 @@
 #posição(ões) ele foi encontrado e quantas ocorrências foram detectadas.
 
 m=[]
+n2=[]
 for i in range(10): #Solicitar 10 valores
-    m.append(int(input(f"Insira um numero na posisão {i}: ")))
+    m.append(int(input(f"Insira um número na posisão {i}: ")))
 n1=input("Insira um número para pesquisar: ")
 for ii in range(10):
     if m[ii]==int(n1):
-        print(f"O numero {n1} foi encontrado na posição {ii}")
+        n2.append(ii)
+print(f"O número {n1} foi encontrado nas posições {n2}")
