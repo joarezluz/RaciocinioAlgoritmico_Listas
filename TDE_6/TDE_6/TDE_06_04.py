@@ -50,6 +50,12 @@ D=[
 for i in range(5):
     for ii in range(5):
         M[i][ii]=random.choice(range(10,99))
-        if ii%2!=0: D[i][ii]=M[i][ii]
-print(D)
+        if i % 2 == 0 and ii % 2 != 0: D[i][ii]=M[i][ii]
+        if i % 2 != 0 and ii % 2 == 0: D[i][ii] = M[i][ii]
+
+
+print("Matriz D")
+for i in D:
+    print(i)
+
 
