@@ -79,6 +79,7 @@ def calcular_Ntroco(vTotal, vPago):
     ]
 
     troco = round(vPago * 100 - vTotal * 100) # Tranformando em centavos
+    templi=[]
 
     resultado = {}
     restante = troco
@@ -90,14 +91,17 @@ def calcular_Ntroco(vTotal, vPago):
             if quantidade > 0 and qN >0 :
                 resultado[nome] = quantidade
                 restante -= quantidade * valor_centavos
-                #NotasC[nome][valor_centavos][2] -= 1  # subtrai as notas
+                #templi[0]=nome
+                #templi[0]=valor_centavos
+                #print(templi)
+                #print(NotasC[nome][int(valor_centavos)][2])# -= 1  # subtrai as notas
             if restante == 0:
                 break
             #NotasC[valor_centavos][2] -= 1  # subtrai as notas
         elif (troco/100)>0.04:
             temTroco = 0
-    for nots in NotasC:
-        print(nots)
+    #for nots in NotasC:
+    #    print(nots)
     return troco / 100, resultado , temTroco
 
 
@@ -110,11 +114,11 @@ while lig == 1:  # apenas para loop
         for l in M:
             print(l)
         sel = int(input("Selecione um produto digitando seu código: "))
-    elif sel>0:
+    elif 99> sel >0:
         sel = int(input("Selecione um produto digitando seu código CORRETO: "))
     if sel == 99:
         admin()
-    if 0 <= sel <= qtProd:
+    if 0 <= sel <= (qtProd-1):
         print(M[sel][1])
         if M[sel][3] > 0:
             print(f"Valor: R${M[sel][2]}")
